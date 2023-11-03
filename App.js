@@ -103,7 +103,7 @@ const Body = ()=>{
                   return <RestaurantCard resData={res}  key={res.name}/>
                })
             }
-
+            {/* always use key and do not use use index as key , important for react optimisation  */}
 
             {/* <ul style={{ display : "flex"}}>{array}</ul>    */} 
             {/* rendering data using first way */}
