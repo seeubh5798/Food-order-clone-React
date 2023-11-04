@@ -29,3 +29,5 @@ prod build - npx parcel build index.html (entry point) - remove main frompackage
 
 <!-- parcel is a beast -->
 
+Never ever keep your hard coded data in component file be it array , object, img src url too , don't keep it in component fiule.
+keep them in Utils folder.
