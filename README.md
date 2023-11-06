@@ -42,3 +42,12 @@ keep them in Utils folder.
 
 #   REACT HOOKS:
 normal JS functions writeen by meta devs inside the React which we import using npm react.
+React reconciliation algorithm - also knaown as react fiberv(after Reect-16)
+ React Fiber uses diff algorithm internally - which finds the difference between current virtual DOM and updated virtual DOM and then it updates the DOM.
+
+
+ Virtual DOM-  it just just a JS Object representation of HTML tags.
+
+ Virtual DOM concept existed boefore react came to the picture.
+
+# React is fast becuz it does efficient dom manupilation - this is the core of React.
