@@ -1,24 +1,36 @@
 import RestaurantCard from "./RestaurantCard";
 import resList from "../Utils/mockdata";
 // default export is imported like this
+import { useState } from "react";
 
+// const dummy = ()=>{
+//    console.log("button clicked form dummy");
+//    console.log(restData) ;
+//    restData = restData.filter( (res) => res.rating > 4 );
+
+//    console.log(restData) ;
+//    change(restData)
+// }
+
+// let restData = resList;  
+// this is normal JS variable
+
+
+// super powerful react variable - also called state variable
+
+const Body = ()=>{
+   let [ restData , setrestData] = useState(resList);  //we pass default value in useState args.
+console.log(restData)
+
+   
 const dummy = ()=>{
    console.log("button clicked form dummy");
    console.log(restData) ;
    restData = restData.filter( (res) => res.rating > 4 );
 
-   console.log(restData) 
+   console.log(restData) ;
+   setrestData(restData)
 }
-
-
-
-let restData = resList;  
-// this is normal JS variable
-
-// super powerful react variable - also called state variable
-
-const Body = ()=>{
-
     // first way using for loop
  //    array = [];
  //    for(var i =0 ;i<resList.length ;i++){
@@ -28,6 +40,10 @@ const Body = ()=>{
     return (
        <div className="body">
           <div className="filter"> <button className="filter-btn" onClick={dummy} onMouseOver={()=> console.log("on btn")}>Top Rated Restaurants</button> </div>
+          <div className="filter"> <button className="filter-btn" onClick={()=>{
+            restData = restData.filter( (res) => res.rating > 4 );
+            setrestData(restData);
+          }}>Top Rated Restaurants</button> </div>
           <div className="res-container">
              {/* {RestaurantCard()}
              <RestaurantCard resData={resList[0]}></RestaurantCard>

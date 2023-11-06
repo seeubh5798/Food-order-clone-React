@@ -36,4 +36,9 @@ keep them in Utils folder.
 
 2 types of export-import
 1- default export-import  e.g export default <name of variable>  import <variable> from path
-2- named export-import  e.g export const <variable>    import { <variable>} from path - used when we have more than one variable/const to be imported
+2- named export-import  e.g export const <variable>    import { <variable> } from path - used when we have more than one variable/const to be imported
+
+
+
+#   REACT HOOKS:
+normal JS functions writeen by meta devs inside the React which we import using npm react.
