@@ -19,7 +19,14 @@ import { useState } from "react";
 // super powerful react variable - also called state variable
 
 const Body = ()=>{
-   let [ restData , setrestData] = useState(resList);  //we pass default value in useState args.
+   let [ restData , setrestData] = useState(resList); 
+
+   // this can also be declared as - 
+   // const arr = useState(restData);
+   // const resdata = arr[0];
+   // const serresdata = arr[1];     // no one knows this way but it's awesome and useState return an array.
+   
+   //we pass default value in useState args.
 console.log(restData)
 
    
