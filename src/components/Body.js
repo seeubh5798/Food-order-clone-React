@@ -1,6 +1,22 @@
 import RestaurantCard from "./RestaurantCard";
 import resList from "../Utils/mockdata";
 // default export is imported like this
+
+const dummy = ()=>{
+   console.log("button clicked form dummy");
+   console.log(restData) ;
+   restData = restData.filter( (res) => res.rating > 4 );
+
+   console.log(restData) 
+}
+
+
+
+let restData = resList;  
+// this is normal JS variable
+
+// super powerful react variable - also called state variable
+
 const Body = ()=>{
 
     // first way using for loop
@@ -11,7 +27,7 @@ const Body = ()=>{
  
     return (
        <div className="body">
-          <div className="search"> Search </div>
+          <div className="filter"> <button className="filter-btn" onClick={dummy} onMouseOver={()=> console.log("on btn")}>Top Rated Restaurants</button> </div>
           <div className="res-container">
              {/* {RestaurantCard()}
              <RestaurantCard resData={resList[0]}></RestaurantCard>
@@ -19,7 +35,7 @@ const Body = ()=>{
              <RestaurantCard resData={resList[2]}></RestaurantCard> */}
              {/* second way for rendering data using map */}
              {
-                resList.map((res)=>{
+                restData.map((res)=>{
                    return <RestaurantCard resData={res}  key={res.name}/>
                 })
              }
