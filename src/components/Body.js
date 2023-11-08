@@ -49,7 +49,7 @@ const getAll = ()=>{
  //       array.push(<RestaurantCard resData={resList[i]} key ={resList[i].name}/>)
  //   }
    useEffect(()=>{
-      console.log("useEffect cb called");
+      // console.log("useEffect cb called");
        fetchData();
    } , []);
 
