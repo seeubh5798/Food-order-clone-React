@@ -51,3 +51,11 @@ React reconciliation algorithm - also knaown as react fiberv(after Reect-16)
  Virtual DOM concept existed boefore react came to the picture.
 
 # React is fast becuz it does efficient dom manupilation - this is the core of React.
+
+
+# UseEffect HOOK:
+    another function given by react , which is called once react renders the element in browser - generally used to make an api call inside the callback to renders the data.
+
+# 2 types of api call - before rendering - do api call and redners in the UI - bad user experience- react do not follow this.
+
+2nd is - first render the basic UI skeleton , do api call , once api gives results - re renders the screen in UI - react follows this and it's a gud user experience
