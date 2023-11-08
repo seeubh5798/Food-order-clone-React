@@ -1,7 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import resList from "../Utils/mockdata";
 // default export is imported like this
-import { useState } from "react";
+import { useState , useEffect } from "react";
 
 // const dummy = ()=>{
 //    console.log("button clicked form dummy");
@@ -38,19 +38,39 @@ const dummy = ()=>{
    console.log(restData) ;
    setrestData(restData)
 }
+
+const getAll = ()=>{
+   restData = resList;
+   setrestData(restData);
+}
     // first way using for loop
  //    array = [];
  //    for(var i =0 ;i<resList.length ;i++){
  //       array.push(<RestaurantCard resData={resList[i]} key ={resList[i].name}/>)
  //   }
- 
+   useEffect(()=>{
+      console.log("useEffect cb called");
+       fetchData();
+   } , []);
+
+   const fetchData = async()=>{
+      
+      const res = await fetch("https://jsonplaceholder.typicode.com/todos/");
+      const mid = await res.json();
+      console.log(mid)
+   }
+   
+   console.log("before use effect")
     return (
        <div className="body">
           <div className="filter"> <button className="filter-btn" onClick={dummy} onMouseOver={()=> console.log("on btn")}>Top Rated Restaurants</button> </div>
           <div className="filter"> <button className="filter-btn" onClick={()=>{
             restData = restData.filter( (res) => res.rating > 4 );
             setrestData(restData);
-          }}>Top Rated Restaurants</button> </div>
+          }}>Top Rated Restaurants</button>
+         </div>
+         <div className="filter"> <button className="filter-btn" onClick={getAll}>All Restaurants</button> 
+         </div>
           <div className="res-container">
              {/* {RestaurantCard()}
              <RestaurantCard resData={resList[0]}></RestaurantCard>
@@ -65,7 +85,7 @@ const dummy = ()=>{
              {/* always use key and do not use use index as key , important for react optimisation  */}
  
              {/* <ul style={{ display : "flex"}}>{array}</ul>    */} 
-             {/* rendering data using first way */}
+             {/* rendering data using first way for loop*/}
           </div>
  
        </div>
