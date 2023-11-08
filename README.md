@@ -59,3 +59,9 @@ React reconciliation algorithm - also knaown as react fiberv(after Reect-16)
 # 2 types of api call - before rendering - do api call and redners in the UI - bad user experience- react do not follow this.
 
 2nd is - first render the basic UI skeleton , do api call , once api gives results - re renders the screen in UI - react follows this and it's a gud user experience
+
+
+
+# We generally show Loader screen till gata gets come from API ? Is it good ?
+
+NO - USE SHIMMER UI , INSTEAD OF LOADING
