@@ -4,14 +4,14 @@ import { ResLogoUrl} from "../Utils/constants";
 const RestaurantCard = (props)=>{
     // console.log(props);
     const { resData} = props;
-    const { name , cuisine , rating, ETA } = resData;
+    const { completed , id , title, userId } = resData;
     return (
-       <div className="res-card" id={name}>
+       <div className="res-card" id={id}>
            <img className="res-logo" src={ResLogoUrl} />
-           <h3> {name} </h3>
-           <h5>  {cuisine}</h5>
-           <h5> Stars {rating}</h5>
-           <h5> {ETA} </h5>
+           <h3> {completed} </h3>
+           <h5>  {title}</h5>
+           <h5> Stars {id}</h5>
+           <h5> {userId} </h5>
        </div>
     )
  }
