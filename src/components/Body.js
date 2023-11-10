@@ -20,6 +20,7 @@ import Shimmer from "./shimmer";
 
 const Body = ()=>{
    let [ restData , setrestData] = useState([]); 
+   let [filteredData , setFilteredData] = useState([]);
 
    // this can also be declared as - 
    // const arr = useState(restData);
@@ -27,7 +28,7 @@ const Body = ()=>{
    // const serresdata = arr[1];     // no one knows this way but it's awesome and useState return an array.
    
    //we pass default value in useState args.
-console.log(restData)
+console.log("rerendering")
 
    
 const dummy = ()=>{
@@ -36,7 +37,8 @@ const dummy = ()=>{
    restData = restData.filter( (res) => res.id < 10 );
 
    console.log(restData) ;
-   setrestData(restData)
+   setrestData(restData);
+   se
 }
 
 
@@ -54,16 +56,17 @@ const dummy = ()=>{
       
       const res = await fetch("https://jsonplaceholder.typicode.com/todos/");
       mid = await res.json();
-      // console.log(mid);
-      setrestData(mid)
+      console.log(mid);
+      setrestData(mid);
+      setFilteredData(mid);
    }
 
    const getAll = ()=>{
       restData = mid;
       setrestData(restData);
    }
-   console.log("before use effect");
-
+   // console.log("before use effect");
+   const [ searchText , setSearchText] =  useState('')
 
    // this is conditional rendering concept - important for interview perspective
    if(restData.length == 0){
@@ -72,10 +75,32 @@ const dummy = ()=>{
     return (
        <div className="body">
           <div className="filter"> <button className="filter-btn" onClick={dummy} >Top Rated Restaurants 1</button> </div>
-          <div className="filter"> <button className="filter-btn" onClick={()=>{
+          {/* <div className="filter"> <button className="filter-btn" onClick={()=>{
             restData = restData.filter( (res) => res.id < 10 );
             setrestData(restData);
           }}>Top Rated Restaurants</button>
+         </div> */}
+
+         <div className="search"> 
+            <input type="text" className="search-box" value={searchText}  onChange={(e)=>{
+               setSearchText(e.target.value);
+            }}/>
+            <button onClick={()=>{
+               // filter the res cards and update the UI
+               console.log(searchText);
+            const newData =   restData.filter( (res)=>{
+               if(searchText !== "")
+                  return res.title.toLowerCase().includes(searchText.toLocaleLowerCase());
+               
+               return true
+               });
+
+               // setrestData(newData)  // this updates restData
+               setFilteredData(newData)
+
+
+            }}> Search</button>
+         
          </div>
          {/* <div className="filter"> <button className="filter-btn" onClick={getAll}>All Restaurants</button> 
          </div> */}
@@ -86,7 +111,7 @@ const dummy = ()=>{
              <RestaurantCard resData={resList[2]}></RestaurantCard> */}
              {/* second way for rendering data using map */}
              {
-                restData.map((res , index)=>{
+                filteredData.map((res , index)=>{
                    return <RestaurantCard resData={res}  key={index}/>
                 })
              }
