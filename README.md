@@ -67,3 +67,5 @@ React reconciliation algorithm - also knaown as react fiberv(after Reect-16)
 NO - USE SHIMMER UI , INSTEAD OF LOADING
 
 # studied aabout how value attribute in input works , always use onChange with input to get the changed value
+
+onchange has event where event.target.value has  types text
