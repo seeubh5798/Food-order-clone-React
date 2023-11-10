@@ -50,3 +50,8 @@
     cursor: pointer;
     margin : 10px;
 }
+
+.btn-login{
+    padding: 0 20px;
+    cursor: pointer;
+}
