@@ -66,7 +66,7 @@ const dummy = ()=>{
       setrestData(restData);
    }
    // console.log("before use effect");
-   const [ searchText , setSearchText] =  useState('')
+   let [ searchText , setSearchText] =  useState('')
 
    // this is conditional rendering concept - important for interview perspective
    if(restData.length == 0){
@@ -83,6 +83,8 @@ const dummy = ()=>{
 
          <div className="search"> 
             <input type="text" className="search-box" value={searchText}  onChange={(e)=>{
+               // searchText = e.target.value;     // it will change the value but not in DOM , need reconcilation to be trgiggered by statechange function here
+
                setSearchText(e.target.value);
             }}/>
             <button onClick={()=>{

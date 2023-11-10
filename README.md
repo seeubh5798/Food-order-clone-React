@@ -65,3 +65,5 @@ React reconciliation algorithm - also knaown as react fiberv(after Reect-16)
 # We generally show Loader screen till gata gets come from API ? Is it good ?
 
 NO - USE SHIMMER UI , INSTEAD OF LOADING
+
+# studied aabout how value attribute in input works , always use onChange with input to get the changed value
