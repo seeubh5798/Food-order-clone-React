@@ -73,3 +73,5 @@ onchange has event where event.target.value has  types text
 
 # react-routing
 We use react-router-dom package for this - use createBrowserRouter to define routing config in App.js
+Also to render it , use RouterProvider provided by react-router-dom (import it) instead of directly using App.js in root.render and provide routing config in router prop
+e.g- root.render(<RouterProvider router={routes which is routing config defined using creacteBrowserRouter} />)   
