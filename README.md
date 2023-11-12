@@ -71,4 +71,5 @@ NO - USE SHIMMER UI , INSTEAD OF LOADING
 onchange has event where event.target.value has  types text
 
 
-
+# react-routing
+We use react-router-dom package for this - use createBrowserRouter to define routing config in App.js
