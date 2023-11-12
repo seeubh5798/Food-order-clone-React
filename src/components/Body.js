@@ -38,7 +38,6 @@ const dummy = ()=>{
 
    console.log(restData) ;
    setrestData(restData);
-   se
 }
 
 
@@ -48,7 +47,7 @@ const dummy = ()=>{
  //       array.push(<RestaurantCard resData={resList[i]} key ={resList[i].name}/>)
  //   }
    useEffect(()=>{
-      // console.log("useEffect cb called");
+      console.log("useEffect cb called from body");
        fetchData();
    } , []);
    var mid;
