@@ -7,23 +7,33 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./Error";
 // because of this complexity for simple html rendering , JSX came to the humanity.
-import { createBrowserRouter , RouterProvider } from "react-router-dom";
+import { createBrowserRouter , RouterProvider ,Outlet} from "react-router-dom";
 
 
 const AppLayout = ()=>{
    return (
      <div className="app">
       <Header />
-      <Body />
+      <Outlet />
      </div>
    )
 }
 
 // creating routing configuration - configuration means defining some info on what will happen on that specific routes
 const routes = createBrowserRouter([
-  {path : "/" , element : <AppLayout /> , errorElement : <Error />},
-  {path : "/about" , element : <About />},
-  {path : "/contact" , element : <Contact />},
+  {
+    path : "/" ,
+    element : <AppLayout /> ,
+    errorElement : <Error />,
+    children :[
+      {path : "/" , element : <Body />},
+      {path : "/about" , element : <About />},
+      {path : "/contact" , element : <Contact />},
+    ]
+  
+  },
+  // {path : "/about" , element : <About />},
+  // {path : "/contact" , element : <Contact />},
   // {path : "*" , element : <Contact />},
 ])
 
