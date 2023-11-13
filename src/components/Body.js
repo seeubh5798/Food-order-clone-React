@@ -3,6 +3,7 @@ import resList from "../Utils/mockdata";
 // default export is imported like this
 import { useState , useEffect } from "react";
 import Shimmer from "./shimmer";
+import { Link } from "react-router-dom";
 // const dummy = ()=>{
 //    console.log("button clicked form dummy");
 //    console.log(restData) ;
@@ -113,7 +114,7 @@ const dummy = ()=>{
              {/* second way for rendering data using map */}
              {
                 filteredData.map((res , index)=>{
-                   return <RestaurantCard resData={res}  key={index}/>
+                   return <Link  key={index} to={`restaurant/${res.id}`}><RestaurantCard resData={res} /></Link>
                 })
              }
              {/* always use key and do not use use index as key , important for react optimisation  */}
