@@ -9,14 +9,27 @@ class UserClass extends React.Component {
             this.state = {
                 school : "Mechanical Sciences",
                 gradYear : 2021,
-                count : 0
+                count : 0,
+                avatar : ""
             }
 
             console.log("child constructor called from Userrclass" , this.props.name)
         }
 
         componentDidMount(){
-            console.log("child componentdidmount called" , this.props.name)
+            console.log("child componentdidmount called" , this.props.name);
+            this.getAvatar();
+        }
+
+        getAvatar = async()=>{
+           const res = await fetch(`https://api.github.com/users/${this.props.github}`);
+           const json = await res.json();
+
+           console.log("avatar " +  this.props.name + "is" + json.avatar_url);
+
+           this.setState({
+            avatar : json.avatar_url
+           })
         }
 
 
@@ -40,6 +53,7 @@ class UserClass extends React.Component {
                     <h4>Schoool - {this.state.school}</h4>
                     <h4>Year of Graduation - {this.state.gradYear}</h4>
                     <h1>Visitors - {this.state.count}</h1>
+                    <img src={this.state.avatar} />
                 </div>
             )
         }
