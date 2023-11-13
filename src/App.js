@@ -8,6 +8,7 @@ import Contact from "./components/Contact";
 import Error from "./Error";
 // because of this complexity for simple html rendering , JSX came to the humanity.
 import { createBrowserRouter , RouterProvider ,Outlet} from "react-router-dom";
+import Restaurant from "./components/Restaurant";
 
 
 const AppLayout = ()=>{
@@ -29,6 +30,7 @@ const routes = createBrowserRouter([
       {path : "/" , element : <Body />},
       {path : "/about" , element : <About />},
       {path : "/contact" , element : <Contact />},
+      {path : "/restaurant/:id" , element : <Restaurant />}
     ]
   
   },
