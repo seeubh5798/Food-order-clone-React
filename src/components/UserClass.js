@@ -13,14 +13,15 @@ class UserClass extends React.Component {
                 avatar : ""
             }
 
-            console.log("child constructor called from Userrclass" , this.props.name)
+            console.log("child constructor called from Userrclass" , this.props.name);
+            debugger
         }
 
         componentDidMount(){
             console.log("child componentdidmount called" , this.props.name);
             this.getAvatar();
         }
-
+                 
         getAvatar = async()=>{
            const res = await fetch(`https://api.github.com/users/${this.props.github}`);
            const json = await res.json();
@@ -32,7 +33,9 @@ class UserClass extends React.Component {
            })
         }
 
-
+        componentDidUpdate(){
+            console.log("child update called" , this.props.name);
+        }
         render(){
             console.log("child render is called from userclass" , this.props.name)
             return (
