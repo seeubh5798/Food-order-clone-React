@@ -4,6 +4,8 @@ import resList from "../Utils/mockdata";
 import { useState , useEffect } from "react";
 import Shimmer from "./shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../Utils/useOnlineStatus";
+
 // const dummy = ()=>{
 //    console.log("button clicked form dummy");
 //    console.log(restData) ;
@@ -29,7 +31,7 @@ const Body = ()=>{
    // const serresdata = arr[1];     // no one knows this way but it's awesome and useState return an array.
    
    //we pass default value in useState args.
-console.log("rerendering")
+console.log("rerendering BODY COMPONENT")
 
    
 const dummy = ()=>{
@@ -41,6 +43,13 @@ const dummy = ()=>{
    setrestData(restData);
 }
 
+// const status = useOnlineStatus();
+
+//    if(!status){
+//       return(
+//          <div><h3>You are offline , pls check internet connection</h3></div>
+//       )
+//    }
 
     // first way using for loop
  //    array = [];
@@ -51,6 +60,8 @@ const dummy = ()=>{
       console.log("useEffect cb called from body");
        fetchData();
    } , []);
+
+  
    var mid;
    const fetchData = async()=>{
       
@@ -65,10 +76,19 @@ const dummy = ()=>{
       restData = mid;
       setrestData(restData);
    }
+
+   const status = useOnlineStatus();
+
+ 
    // console.log("before use effect");
    let [ searchText , setSearchText] =  useState('')
 
    // this is conditional rendering concept - important for interview perspective
+   if(status === false){
+      return (
+         <div><h3>You are offline , pls check internet connection</h3></div>
+      )
+   }
    if(restData.length == 0){
       return <Shimmer />
    }
