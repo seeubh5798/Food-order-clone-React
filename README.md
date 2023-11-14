@@ -81,3 +81,5 @@ e.g- root.render(<RouterProvider router={routes which is routing config defined 
 2- server side routing 
 
 React class life cycle methods - very important -covered here at code level
+
+classbased components are covered in UserClass.js file and About.js as parent
