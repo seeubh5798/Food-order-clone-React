@@ -79,3 +79,5 @@ e.g- root.render(<RouterProvider router={routes which is routing config defined 
 #Types of routing in webApps
 1- client side routing
 2- server side routing 
+
+React class life cycle methods - very important -covered here at code level
