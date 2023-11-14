@@ -1,22 +1,26 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import useMyCustomHook from "../Utils/useMyCustomHook";
 const Restaurant = ()=>{
 
-    const [resData , setresData] = useState("");
+    // const [resData , setresData] = useState("");
     const params = useParams();
     console.log(params);
+    console.log(" from restaurant.js file where custom hook is  there")
+    resData = useMyCustomHook(params)
 
-    useEffect(()=>{
-        fetchDataUsingId(params)
-    }, []);
+    // useEffect(()=>{
+    //     fetchDataUsingId(params)
+    // }, []);
 
-    fetchDataUsingId =  async()=>{
-        const res = await fetch("https://jsonplaceholder.typicode.com/todos/"+params.id);
-        const json = await res.json();
-        console.log(json);
-        setresData(json);
-    }
+    // fetchDataUsingId =  async()=>{
+    //     const res = await fetch("https://jsonplaceholder.typicode.com/todos/"+params.id);
+    //     const json = await res.json();
+    //     console.log(json);
+    //     setresData(json);
+    // }
+ // normal way but using custom hook here too//
 
     return (
         <div>
