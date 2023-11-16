@@ -6,7 +6,7 @@ const Error = () => {
    
     <div>
         OOPs ! Error Occured
-        <h1> {err.data}</h1>
+        <h1> {err?.data}</h1>
         
     </div>
   )

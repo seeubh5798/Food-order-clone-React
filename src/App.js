@@ -1,5 +1,5 @@
 
-import React, { lazy } from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header"
 import Body from "./components/Body";
@@ -30,7 +30,7 @@ const routes = createBrowserRouter([
     errorElement : <Error />,
     children :[
       {path : "/" , element : <Body />},
-      {path : "/about" , element : <About />},
+      {path : "/about" , element : <Suspense fallback={<Error/>}><About /></Suspense>},
       {path : "/contact" , element : <Contact />},
       {path : "/restaurant/:id" , element : <Restaurant />}
     ]
