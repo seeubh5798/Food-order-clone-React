@@ -1,15 +1,17 @@
 
-import React from "react";
+import React, { lazy } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header"
 import Body from "./components/Body";
-import About from "./components/About";
+// import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./Error";
 // because of this complexity for simple html rendering , JSX came to the humanity.
 import { createBrowserRouter , RouterProvider ,Outlet} from "react-router-dom";
 import Restaurant from "./components/Restaurant";
 
+const About = lazy(()=> import('./components/About')) ;
+//lazy loading about.js
 
 const AppLayout = ()=>{
    return (
