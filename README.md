@@ -87,3 +87,5 @@ classbased components are covered in UserClass.js file and About.js as parent
 
 #use lazy given by react for optimisation 
 #custom hooks is just a function - generally we declare it in utils folder
+
+#always use Suspense component given by react along with lazy function - fallback is given for suspense to show the dummy component/shimmer ui until the lazy chunks load into the UI
