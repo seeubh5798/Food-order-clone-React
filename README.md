@@ -83,3 +83,7 @@ e.g- root.render(<RouterProvider router={routes which is routing config defined 
 React class life cycle methods - very important -covered here at code level
 
 classbased components are covered in UserClass.js file and About.js as parent
+
+
+#use lazy given by react for optimisation 
+#custom hooks is just a function - generally we declare it in utils folder

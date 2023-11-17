@@ -14,7 +14,7 @@ class UserClass extends React.Component {
             }
 
             console.log("child constructor called from Userrclass" , this.props.name);
-            debugger
+            // debugger
         }
 
         componentDidMount(){
