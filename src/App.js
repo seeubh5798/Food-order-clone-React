@@ -5,12 +5,13 @@ import Header from "./components/Header"
 import Body from "./components/Body";
 // import About from "./components/About";
 import Contact from "./components/Contact";
-import Error from "./Error";
+// import Error from "./Error";
 // because of this complexity for simple html rendering , JSX came to the humanity.
 import { createBrowserRouter , RouterProvider ,Outlet} from "react-router-dom";
 import Restaurant from "./components/Restaurant";
 
 const About = lazy(()=> import('./components/About')) ;
+const Error = lazy(()=> import('./Error'))
 //lazy loading about.js
 
 const AppLayout = ()=>{
@@ -27,11 +28,11 @@ const routes = createBrowserRouter([
   {
     path : "/" ,
     element : <AppLayout /> ,
-    errorElement : <Error />,
+    errorElement : <Suspense fallback={<h1>Error Loading...............................</h1>}><Error/></Suspense>,
     children :[
       {path : "/" , element : <Body />},
       {path : "/about" , element : <Suspense fallback={<Error/>}><About /></Suspense>},
-      {path : "/contact" , element : <Contact />},
+      {path : "/contact" , element : <Contact/>},
       {path : "/restaurant/:id" , element : <Restaurant />}
     ]
   
