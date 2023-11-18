@@ -24,7 +24,7 @@ const Restaurant = ()=>{
 
     return (
         <div>
-            <Link to="/"> <button> Back to Home</button> </Link>
+            <Link to="/"> <button className="bg-gray-200 w-40"> Back to Home</button> </Link>
             <h1> Title - {resData.title}</h1>
             <h4>UserId - {resData.userId}</h4>
             <span> completed - {resData?.completed?.toString()}</span>
