@@ -94,7 +94,8 @@ const dummy = ()=>{
    }
     return (
        <div className="body">
-          <div className="filter"> <button className="filter-btn" onClick={dummy} >Top Rated Restaurants 1</button> </div>
+         <div className="flex">
+          <div className="filter"> <button className="filter-btn" onClick={dummy} >Top Rated Restaurants</button> </div>
           {/* <div className="filter"> <button className="filter-btn" onClick={()=>{
             restData = restData.filter( (res) => res.id < 10 );
             setrestData(restData);
@@ -102,7 +103,7 @@ const dummy = ()=>{
          </div> */}
 
          <div className="search"> 
-            <input type="text" className="search-box" value={searchText}  onChange={(e)=>{
+            <input type="text" className="search-box bg-green-100" value={searchText}  onChange={(e)=>{
                // searchText = e.target.value;     // it will change the value but not in DOM , need reconcilation to be trgiggered by statechange function here
 
                setSearchText(e.target.value);
@@ -124,9 +125,10 @@ const dummy = ()=>{
             }}> Search</button>
          
          </div>
+         </div>
          {/* <div className="filter"> <button className="filter-btn" onClick={getAll}>All Restaurants</button> 
          </div> */}
-          <div className="res-container">
+          <div className="res-container flex flex-wrap shadow-lg">
              {/* {RestaurantCard()}
              <RestaurantCard resData={resList[0]}></RestaurantCard>
              <RestaurantCard resData={resList[1]}></RestaurantCard>
