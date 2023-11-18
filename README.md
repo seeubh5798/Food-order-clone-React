@@ -91,3 +91,9 @@ classbased components are covered in UserClass.js file and About.js as parent
 #always use Suspense component given by react along with lazy function - fallback is given for suspense to show the dummy component/shimmer ui until the lazy chunks load into the UI
 
 #tailwind uses postcss in the background - postcss is like managing css from js. PostCSS is a software development tool that uses JavaScript-based plugins to automate routine CSS operations
+
+#Cons of TailwindCSS - 
+1- Pros - no nneed to move between files. , it is very light weight
+2- Pros Tailwind automatically removes all unused CSS when building for production, which means your final CSS bundle is the smallest it could possibly be. In fact, most Tailwind projects ship less than 10kB of CSS to the client. 
+
+URL- https://tailwindcss.com/
