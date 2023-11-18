@@ -14,10 +14,10 @@ const RestaurantCard = (props)=>{
         )
     }
     return (
-       <div className="res-card" id={id}>
+       <div className="res-card m-4 p-4 w-[200px]  bg-gray-100" id={id}>
            <img className="res-logo" src={ResLogoUrl} />
            <h3> {completed} </h3>
-           <h5>  {title}</h5>
+           <h5 className="font-bold">  {title}</h5>
            <h5> Stars {id}</h5>
            <h5> {userId} </h5>
        </div>
