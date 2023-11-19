@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard ,{RestaurantHigherOrderFunction} from "./RestaurantCard";
 import resList from "../Utils/mockdata";
 // default export is imported like this
 import { useState , useEffect } from "react";
@@ -42,6 +42,8 @@ const dummy = ()=>{
    console.log(restData) ;
    setrestData(restData);
 }
+
+const RestaurantHigherOrderFunc = RestaurantHigherOrderFunction(RestaurantCard);
 
 // const status = useOnlineStatus();
 
@@ -136,7 +138,7 @@ const dummy = ()=>{
              {/* second way for rendering data using map */}
              {
                 filteredData.map((res , index)=>{
-                   return <Link  key={index} to={`restaurant/${res.id}`}><RestaurantCard resData={res} /></Link>
+                   return <Link key={index} to={`restaurant/${res.id}`} > { res.userId === 1 ? <RestaurantHigherOrderFunc resData={res}/> : <RestaurantCard resData={res} /> }</Link> 
                 })
              }
              {/* always use key and do not use use index as key , important for react optimisation  */}

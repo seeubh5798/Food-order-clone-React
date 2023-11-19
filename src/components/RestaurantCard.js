@@ -24,4 +24,20 @@ const RestaurantCard = (props)=>{
     )
  }
 
+
+
+ export const RestaurantHigherOrderFunction = (RestaurantCard)=>{
+        return (props)=>{
+
+            return (
+                <>
+                
+                <label className="absolute">Promoted by HOF</label>
+                <RestaurantCard resData={props}/>
+
+                </>
+            )
+        }
+ }
+
  export default RestaurantCard;
